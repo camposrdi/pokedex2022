@@ -13,7 +13,7 @@ function App() {
           
           <TiposPokemon />
            <ListaPokemon />
-           <Pokemon />
+          
           
         </Principal>
       </header>

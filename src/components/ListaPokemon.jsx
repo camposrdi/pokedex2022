@@ -1,6 +1,8 @@
 import React, {useState, useEffect } from 'react'
+import Pokemon from './Pokemon'
 
 const urlBase="https://pokeapi.co/api/v2/pokemon/"
+const urlImg="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
 
 const initialState = {
     "count": 0,
@@ -16,6 +18,7 @@ const initialState = {
 function ListaPokemon() {
 const [url, SetUrl] = useState(urlBase + "?limit=3&offset=9")
     const [pokemon, SetPokemon] = useState(initialState)
+    const [namePokemon, setNamePokemon] = useState("")
 
     useEffect(() => {
     fetch(url)
@@ -23,8 +26,14 @@ const [url, SetUrl] = useState(urlBase + "?limit=3&offset=9")
          response.json()
       )
        .then(respuesta =>{
+        let listaPokemon=respuesta.results.map((p) =>
+        {
+          let url = urlImg + p.url.replace(urlBase,"").replace("/","")+".png"
+          return {...p, urlImage:url}
+        })
+        respuesta.results=listaPokemon
         SetPokemon(respuesta)
-        console.log(respuesta)
+      
       
       })
       .catch(
@@ -34,17 +43,23 @@ const [url, SetUrl] = useState(urlBase + "?limit=3&offset=9")
   return (
     <>
     <div> Lista de Pokémon </div>
-{console.log({pokemon})}
+
     {
     
        pokemon.results.map((s, i) => 
        {
-        return <p> {s.name} </p>
-        })
-        }
+        return   <div onClick={() => {setNamePokemon(s.name)}} key={i}>
+                      <img src={s.urlImage} alt={s.name}></img>
+                       <p> {s.name} </p>
+                   </div>
+
+               
+        })}
         
      <button className='btn btn-primary' onClick={() => { SetUrl(pokemon.previous)}}>Prev</button>
     <button className='btn btn-secondary' onClick={() => {SetUrl(pokemon.next)}}>Next</button> 
+     <Pokemon name={namePokemon}/> 
+
     </>
   )
 }
