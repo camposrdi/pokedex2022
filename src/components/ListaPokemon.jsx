@@ -16,7 +16,7 @@ const initialState = {
       }
 
 function ListaPokemon() {
-const [url, SetUrl] = useState(urlBase + "?limit=3&offset=9")
+const [url, SetUrl] = useState(urlBase + "?limit=28&offset=9")
     const [pokemon, SetPokemon] = useState(initialState)
     const [namePokemon, setNamePokemon] = useState("")
 
@@ -42,13 +42,16 @@ const [url, SetUrl] = useState(urlBase + "?limit=3&offset=9")
     
   return (
     <>
-    <div> Lista de Pokémon </div>
+  
+  
+    <div className="listapokemon"> Pokemon's list </div>
+
 
     {
     
        pokemon.results.map((s, i) => 
        {
-        return   <div onClick={() => {setNamePokemon(s.name)}} key={i}>
+        return   <div className= "lista" onClick={() => {setNamePokemon(s.name)}} key={i}>
                       <img src={s.urlImage} alt={s.name}></img>
                        <p> {s.name} </p>
                    </div>
@@ -56,9 +59,12 @@ const [url, SetUrl] = useState(urlBase + "?limit=3&offset=9")
                
         })}
         
-     <button className='btn btn-primary' onClick={() => { SetUrl(pokemon.previous)}}>Prev</button>
+        <br></br>
+    <button className='btn btn-primary' onClick={() => { SetUrl(pokemon.previous)}}>Prev</button>
     <button className='btn btn-secondary' onClick={() => {SetUrl(pokemon.next)}}>Next</button> 
      <Pokemon name={namePokemon}/> 
+     
+
 
     </>
   )
