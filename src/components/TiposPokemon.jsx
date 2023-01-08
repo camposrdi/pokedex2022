@@ -20,16 +20,21 @@ function TiposPokemon() {
 
   return (
   <>
-    <div> Tipos de Pokémon </div>
+  
+    <h1 className="tipotitulo"> Pokemon's types </h1>
+
 
     {
         tipos.map((s, i) => {
         const color = tiposColorPokemon.find((c) => c.tipo == s.name);
-        return <button key={i} style={{backgroundColor: color.color}}>{s.name}</button>
+        return <button className="tipopokemon" key={i} style={{backgroundColor: color.color}}>{s.name}</button>
 
         })}
+        
+        
 
     </>
+    
   )
 }
 
