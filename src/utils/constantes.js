@@ -1,6 +1,5 @@
-const tiposColorPokemon = 
-
-[
+const tiposColorPokemon = [
+  { tipo: "all", color: "#D32C2C" },
   { tipo: "normal", color: "#A8A090" },
   { tipo: "fighting", color: "#A05038" },
   { tipo: "flying", color: "#98A8F0" },

@@ -3,8 +3,6 @@ import ListaPokemon from './ListaPokemon';
 
 const Card = ({results}) => {
 
-console.log(results);
-
 
     return (
         <div style={{ display: 'inline-block' }}>

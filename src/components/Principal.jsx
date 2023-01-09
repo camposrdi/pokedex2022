@@ -1,4 +1,6 @@
 import React from 'react'
+import Logout from './Logout';
+import Profile from './Profile';
 //import SearchBar from './SearchBar'
 
 
@@ -29,7 +31,8 @@ function Principal(props) {
     </form>
     
      <ul className="nav navbar-nav navbar-right">
-      <li> <p href="#"><span className="glyphicon glyphicon-log-out"></span> Log Out</p></li>
+       <Profile />
+      <Logout />
     </ul>
   </div>
 </nav>
