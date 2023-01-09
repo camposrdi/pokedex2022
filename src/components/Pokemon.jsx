@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 
-const urlBase = "https://pokeapi.co/api/v2/pokemon/";
 var pokemonInicial = {
   id: 0,
   name: "",
@@ -30,9 +29,8 @@ class Pokemon extends React.Component {
 
   componentDidMount() {
     this.setState({ ...this.state, pokemon: pokemonInicial });
-
     axios
-      .get(urlBase + this.props.name)
+      .get(this.props.urlPokemon)
       .then((response) => {
         var pokemon = {
           id: response.data.id,
@@ -64,7 +62,7 @@ class Pokemon extends React.Component {
 
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
-    if (this.props.name !== prevProps.name) {
+    if (this.props.urlPokemon !== prevProps.urlPokemon) {
       this.componentDidMount();
     }
   }
@@ -72,8 +70,6 @@ class Pokemon extends React.Component {
   render() {
     return (
       <>
-        <h1>Detalles de pokémon</h1>
-
         <div className="card" style={{ width: 300 }}>
           <div className="card-header">
             {this.state.pokemon.name.toUpperCase()}
