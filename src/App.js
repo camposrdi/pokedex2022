@@ -1,6 +1,7 @@
 import { useState,useEffect } from 'react';
 import './App.css';
 import './components/Principal.css';
+import './components/Profile.css';
 import ListaPokemon from './components/ListaPokemon';
 import Principal from './components/Principal';
 import TiposPokemon from './components/TiposPokemon';
