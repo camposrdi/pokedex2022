@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {tiposColorPokemon} from '../utils/constantes'
 
-function TiposPokemon() {
+function TiposPokemon({setTipoPokemon}) {
     
     const [tipos, SetTipos] = useState([])
     
@@ -23,11 +23,18 @@ function TiposPokemon() {
   
     <h1 className="tipotitulo"> Pokemon's types </h1>
 
+     <button className="tipopokemon" key={55} 
+              onClick= {() => {setTipoPokemon("all")}}
+              style={{backgroundColor: tiposColorPokemon.find((c) => c.tipo === "all").color}}>all</button>
 
     {
         tipos.map((s, i) => {
-        const color = tiposColorPokemon.find((c) => c.tipo == s.name);
-        return <button className="tipopokemon" key={i} style={{backgroundColor: color.color}}>{s.name}</button>
+        const color = tiposColorPokemon.find((c) => c.tipo === s.name);
+        return <button 
+                  className="tipopokemon" 
+                  key={i} onClick= {() => {setTipoPokemon(s.name)}} style={{backgroundColor: color.color}}>{s.name}
+                  
+                  </button>
 
         })}
         
