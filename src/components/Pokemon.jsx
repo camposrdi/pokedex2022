@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import './Pokemon.css';
 
 var pokemonInicial = {
   id: 0,
@@ -80,18 +81,21 @@ class Pokemon extends React.Component {
             className="card-img-top"
           ></img>
           <div className="card-body">
-            <h5 className="card-title">Caracteristicas</h5>
-            <p className="card-text"></p>
+            <h5 className="card-title">Characteristics</h5>
+            <div className="card-text">
 
-            <p>Identificador:{this.state.pokemon.id}</p>
-            <p>Experiencia:{this.state.pokemon.base_experience}</p>
-            <p>Altura:{this.state.pokemon.height}</p>
-            <p>Peso:{this.state.pokemon.weight}</p>
-            <p>Tipo:{this.state.pokemon.type}</p>
-            <p>Estadistica</p>
+            <p>Identifier:     {this.state.pokemon.id}</p>
+            <p>Experience:     {this.state.pokemon.base_experience}</p>
+            <p>Height:         {this.state.pokemon.height}</p>
+            <p>Weight:         {this.state.pokemon.weight}</p>
+            <p>Type:           {this.state.pokemon.type}</p>
+          
+            </div>
           </div>
 
-          <p>{this.state.pokemon.hp_name}</p>
+           <h5 className="card-subtitle"> Base Stats</h5>
+
+          <p className="progresst">{this.state.pokemon.hp_name}</p>
 
           <div className="progress">
             <div
@@ -107,7 +111,7 @@ class Pokemon extends React.Component {
           </div>
           <br />
 
-          <p>{this.state.pokemon.at_name}</p>
+          <p className="progresst">{this.state.pokemon.at_name}</p>
           <div className="progress">
             <div
               className="progress-bar bg-info"
@@ -122,7 +126,7 @@ class Pokemon extends React.Component {
           </div>
           <br />
 
-          <p>{this.state.pokemon.df_name}</p>
+          <p className="progresst">{this.state.pokemon.df_name}</p>
           <div className="progress">
             <div
               className="progress-bar bg-warning"
@@ -137,7 +141,7 @@ class Pokemon extends React.Component {
           </div>
           <br />
 
-          <p>{this.state.pokemon.sa_name}</p>
+          <p className="progresst">{this.state.pokemon.sa_name}</p>
           <div className="progress">
             <div
               className="progress-bar bg-danger"
@@ -153,7 +157,7 @@ class Pokemon extends React.Component {
 
           <br />
 
-          <p>{this.state.pokemon.sd_name}</p>
+          <p className="progresst">{this.state.pokemon.sd_name}</p>
 
           <div className="progress">
             <div
@@ -169,7 +173,7 @@ class Pokemon extends React.Component {
           </div>
 
           <br />
-          <p>{this.state.pokemon.sp_name}</p>
+          <p className="progresst">{this.state.pokemon.sp_name}</p>
           <div className="progress">
             <div
               className="progress-bar bg-Light"
