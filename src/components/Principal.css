@@ -1,20 +1,33 @@
-nav{
+
+nav.navbar{
     background-color: #04045E;
-    border-radius: 35px;
-    padding: 15px;
-    margin: 20px;
-    box-shadow: 1px 1px 2px aliceblue;
+    box-shadow: 2px 2px 2px goldenrod;
+    height: 150px;
+    padding: 5px 25px 10px 30px;
+        margin: 20px 30px;
+    border-radius: 30px;
+    
+
 }
 
-.navbar-brand{
-    margin: 30px;
-    font-size: 25px;
+input.form-control{
+    background-color: aliceblue;
+    box-shadow: 2px 2px 2px gray;
+    padding: 5px 60px;
+    position: relative;
+        top: -15px;
+        left: 5px;
+   
 }
+
 
 .btn-default{
     background-color: gold;
     margin: 10px;
     font-size: 20;
+    position: relative;
+        top: -15px;
+        left: 5px;
 }
 
 
@@ -39,11 +52,32 @@ nav{
     width: 400px;
     border-radius: 20px;
     box-shadow: 3px 3px 5px goldenrod;
+
+    
+    
 }
 
-h1.tituloprincipal{
+.container-pokeinfo{
+background-color: #04045E;
+border-radius: 25px;
+ text-transform: uppercase;
 
-   color: gold;
-   text-align: center;
-   
+
+}
+
+.tituloprincipal {
+    color: goldenrod;
+    font-weight: bold;
+    text-shadow: 2px 1px 1px white ;
+    position: relative;
+        top: 10px;
+        left: 420px;   
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+img.pokelist{
+
+    width: 150px;
+    height: 150px;
+    
 }
