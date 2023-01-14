@@ -1,0 +1,26 @@
+.login{
+   
+    background-color: gold;
+    border-radius: 15px;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+        top: 60%;
+        left: 46%;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;  
+    
+}
+
+h1.logintitulo{
+    color:aliceblue;
+    margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    text-shadow: 2px 3px 2px goldenrod;
+}
