@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Pokemon from "./Pokemon";
+import Modal from "./Modal";
+import useModal from "../hooks/useModal.js";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 
 const urlBase = "https://pokeapi.co/api/v2/pokemon/";
 const urlImg =
@@ -20,10 +27,9 @@ const initialState = {
 };
 
 function ListaPokemon({ tipoPokemon }) {
+    const [isOpenModal, openModal ,closeModal ] = useModal(true);
     const [url, SetUrl] = useState('');
-  console.log("ListaPokemon", tipoPokemon);
-
-  
+   
 useEffect(()=>{
   const urlFinal =
     tipoPokemon == "all" ? urlBase + paginado : urlTipos + tipoPokemon;
@@ -31,18 +37,13 @@ useEffect(()=>{
 },[tipoPokemon])
   
 
-
-
   const [pokemon, SetPokemon] = useState(initialState);
   
   const [urlPokemon, seturlPokemon] = useState("");
 
-  console.log("URL", url);
-
   useEffect(() => {
     // SetUrl(urlFinal);
-    console.log("useEfect", "Entre");
-    fetch(url)
+        fetch(url)
       .then((response) => response.json())
       .then((respuesta) => {
         let dataPokemon = null;
@@ -64,7 +65,6 @@ useEffect(()=>{
             return { ...p.pokemon, urlImage: url };
           });
         }
-        console.log("listaPokemo", listaPokemon);
         respuesta.results = listaPokemon;
         SetPokemon(respuesta);
       })
@@ -82,11 +82,25 @@ useEffect(()=>{
           <div
             className="lista"
             onClick={() => {
-              seturlPokemon(s.url);
+              seturlPokemon();
+
+              MySwal.fire({showClass: {
+                      popup: 'animate__animated animate__fadeInRight'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  ,html:<div className="container-pokeinfo">
+                  <Pokemon urlPokemon={s.url}>
+
+                  </Pokemon>
+                  </div>},
+              )
+            
             }}
             key={i}
           >
-            <img src={s.urlImage} alt={s.name}></img>
+            <img className="pokelist" src={s.urlImage} alt={s.name}></img>
             <p> {s.name} </p>
           </div>
         );
@@ -109,7 +123,7 @@ useEffect(()=>{
       >
         Next
       </button>
-      <Pokemon urlPokemon={urlPokemon} />
+     
     </>
   );
 }
