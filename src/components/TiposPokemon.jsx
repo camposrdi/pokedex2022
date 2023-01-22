@@ -1,26 +1,27 @@
 import React, {useEffect, useState} from 'react'
 import {tiposColorPokemon} from '../utils/constantes'
+import Loading from './Loading'
+import useFetch from '../hooks/useFetch'
 
 function TiposPokemon({setTipoPokemon}) {
-    
-    const [tipos, SetTipos] = useState([])
-    
-    useEffect(() => {
-      fetch("https://pokeapi.co/api/v2/type")
-      .then(response => 
-         response.json()
-      )
-      .then(respuesta =>{
-        SetTipos(respuesta.results)
-      })
-      .catch(
-        error =>{console.error(error)}
-      )}, [])
-    
+    const {isFetching, data, error} = useFetch("https://pokeapi.co/api/v2/type");
 
+    const [tipos, SetTipos] = useState([])
+    console.log(isFetching)
+
+  useEffect(() => {
+    if (!isFetching) {
+      if (data != null) {
+        SetTipos(data);
+      }
+    }
+  }, [isFetching]);
+
+   
   return (
   <>
-  
+  <Loading isLoading={isFetching}/>
+
     <h1 className="tipotitulo"> Pokemon's types </h1>
 
      <button className="tipopokemon" key={55} 

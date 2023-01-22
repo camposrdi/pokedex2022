@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'React'
+import { useState, useEffect } from 'react'
 
 function useFetch(url) {
   const [isFetching, setIsFetching] = useState(false)
@@ -6,17 +6,19 @@ function useFetch(url) {
   const [error, setError] = useState(null)
 
   useEffect(() => {
+    console.log(url)
     setIsFetching(true)
     fetch(url)
       .then((response) => response.json())
       .then((respuesta) => {
+        console.log('AQUI', respuesta.results)
         setData(respuesta.results)
         setIsFetching(false)
       })
       .catch((error) => {
         setError(error)
         setIsFetching(false)
-        console.error(error);
+        console.error('ERROR',error);
       });
   
    

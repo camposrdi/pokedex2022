@@ -6,12 +6,14 @@ import loading from '../img/Pokeball.png'
 
 const MySwal = withReactContent(Swal)
 
-export default function Loding() { 
+export default function Loading({isLoading}) { 
   useEffect(() => {
-    loader()
-  
-   
-  }, [])
+    if (isLoading) {
+      loader();
+    } else {
+      MySwal.close();
+    }
+  }, [isLoading])
   
   const loader = () => {
     MySwal.fire({
@@ -22,19 +24,16 @@ export default function Loding() {
         MySwal.showLoading();
       },
       willClose: () => {
-        console.log("loading abierto");
+        console.log("loading cerrado");
       },
     }).then((result) => {
-      /* Read more about handling dismissals below */
-      if (result.dismiss === MySwal.DismissReason.timer) {
-        console.log("Loading cerrado");
-      }
+     
     });
   }
   return (
     
     <div className='loader'>
-      <button onClick={() =>{ MySwal.close()}}>Aqui estoy</button>
+     
       
     </div>
   )
