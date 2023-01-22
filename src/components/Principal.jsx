@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Logout from './Logout';
 import Profile from './Profile';
-import './Principal.css';
+import '../css/Principal.css';
 import Pokemon from './Pokemon';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'

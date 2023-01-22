@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import './components/Principal.css';
+import './css/Principal.css';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 

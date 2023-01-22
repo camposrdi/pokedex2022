@@ -5,6 +5,7 @@ import Principal from './components/Principal';
 import TiposPokemon from './components/TiposPokemon';
 import Login from './components/Login';
 import { useAuth0 } from '@auth0/auth0-react';
+import Loding from './components/Loding';
 
 const tipoSeleccionado = "all";
 
@@ -20,12 +21,13 @@ function App() {
   return (
     <div className="App container">
       <header className="App-header">
-        <Login /> 
-      { isAuthenticated && ( <Principal>
-          <TiposPokemon setTipoPokemon={cambiarTipo} />
-          <ListaPokemon tipoPokemon={tipo} />
-        </Principal> )
-        }
+          <Login />
+          {isAuthenticated && (
+            <Principal>
+              <TiposPokemon setTipoPokemon={cambiarTipo} />
+              <ListaPokemon tipoPokemon={tipo} />
+            </Principal>
+          )}
       </header>
     </div>
   );
