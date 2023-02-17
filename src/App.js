@@ -5,7 +5,7 @@ import Principal from './components/Principal';
 import TiposPokemon from './components/TiposPokemon';
 import Login from './components/Login';
 import { useAuth0 } from '@auth0/auth0-react';
-import Loding from './components/Loding';
+
 
 const tipoSeleccionado = "all";
 

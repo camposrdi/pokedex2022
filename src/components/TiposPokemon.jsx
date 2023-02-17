@@ -37,7 +37,8 @@ function TiposPokemon({setTipoPokemon}) {
                   
                   </button>
 
-        })}
+        })
+        }
         
         
 
