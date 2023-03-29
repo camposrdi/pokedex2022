@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/pokedex2022/static/css/main.b48f1ffe.css",
+    "main.js": "/pokedex2022/static/js/main.5b78a28f.js",
+    "static/js/787.ffe3e5e2.chunk.js": "/pokedex2022/static/js/787.ffe3e5e2.chunk.js",
+    "static/media/glazed-pokeball-planetx-wallpaper.png": "/pokedex2022/static/media/glazed-pokeball-planetx-wallpaper.66fbf58a72dfee40faa9.png",
+    "static/media/Pokeball.png": "/pokedex2022/static/media/Pokeball.63faf02f9672631f74a1.png",
+    "index.html": "/pokedex2022/index.html",
+    "main.b48f1ffe.css.map": "/pokedex2022/static/css/main.b48f1ffe.css.map",
+    "main.5b78a28f.js.map": "/pokedex2022/static/js/main.5b78a28f.js.map",
+    "787.ffe3e5e2.chunk.js.map": "/pokedex2022/static/js/787.ffe3e5e2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b48f1ffe.css",
+    "static/js/main.5b78a28f.js"
+  ]
+}
