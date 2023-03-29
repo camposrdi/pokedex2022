@@ -22,7 +22,7 @@ function App() {
     <div className="App container">
       <header className="App-header">
           <Login />
-          {isAuthenticated && (
+          {!isAuthenticated && (
             <Principal>
               <TiposPokemon setTipoPokemon={cambiarTipo} />
               <ListaPokemon tipoPokemon={tipo} />

@@ -10,7 +10,7 @@ const Login = () => {
 
     <>
    {
-  ! isAuthenticated && (
+   isAuthenticated && (
     <>
       <button className='login' onClick={() => loginWithRedirect()}>Log In</button>
         <div className='container'>
